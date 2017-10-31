@@ -95,6 +95,15 @@ public class Donors {
 						return vb(rd1.day, rd2.day);
 					}	}
 			});
+			for (day1 rd : arr) {
+				countad y2 = h2.get(rd);
+				pr1.println(buildDateString(rd, y2));
+			}
+			pr1.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 			
 			
 			
