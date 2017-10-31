@@ -131,6 +131,20 @@ public class Donors {
 		bd1.append(Math.round(fs.total));
 		return bd1.toString();
 	}
+	public static String buildDateString(day1 rz, countad fs) {
+		StringBuilder bd2 = new StringBuilder();
+		bd2.append(rz.s4);
+		bd2.append("|");
+		bd2.append(rz.day);
+		bd2.append("|");
+		long q = Math.round(fs.median());
+		bd2.append(q);
+		bd2.append("|");
+		bd2.append(fs.occurance);
+		bd2.append("|");
+		bd2.append(Math.round(fs.total));
+		return bd2.toString();
+	}
 			
 			
 	}
