@@ -61,7 +61,16 @@ public class Donors {
 						y.total += tr;
 						y.add(tr);
 					}
-					
+					pr.println(buildZipString(a1, y));	} 
+				catch (Exception e) {	
+				}
+				
+				String day = strs[13];
+				if (!s1.contains(day)) {
+					continue;
+				} //medianvals_by_date
+				day1 dd = new day1(u1, day);
+				countad y1 = null;
 			
 			
 	}
