@@ -71,6 +71,18 @@ public class Donors {
 				} //medianvals_by_date
 				day1 dd = new day1(u1, day);
 				countad y1 = null;
+				if (!h2.containsKey(dd)) {
+					y1 = new countad(1, tr);
+					y1.add(tr);
+					h2.put(dd, y1);
+				} else {
+					y1 = h2.get(dd);
+					y1.occurance += 1;
+					y1.total += tr;
+					y1.add(tr);
+				}
+			}
+			
 			
 			
 	}
