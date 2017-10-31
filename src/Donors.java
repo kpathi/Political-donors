@@ -104,7 +104,19 @@ public class Donors {
 			e.printStackTrace();
 		}
 	}
-			
+	public static int vb(String s1, String s2) {
+		String y1 = s1.substring(4);
+		String y2 = s2.substring(4);
+		if (!y1.equals(y2)) {
+			return y1.compareTo(y2);
+		}
+		String sg = s1.substring(0, 2);
+		String sg1 = s2.substring(0, 2);
+		if (!sg.equals(sg1)) {
+			return sg.compareTo(sg1);
+		}
+		return s1.substring(2, 4).compareTo(s2.substring(2, 4));
+	}		
 			
 			
 	}
