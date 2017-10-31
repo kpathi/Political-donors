@@ -82,6 +82,19 @@ public class Donors {
 					y1.add(tr);
 				}
 			}
+			rr.close();
+			pr.close();
+			PrintWriter pr1 = new PrintWriter(args[2], "UTF-8");
+			ArrayList<day1> arr = new ArrayList<>();
+			arr.addAll(h2.keySet());
+			Collections.sort(arr, new Comparator<day1>(){
+				public int compare(day1 rd1, day1 rd2) {
+					if (!rd1.s4.equals(rd2.s4)) {
+						return rd1.s4.compareTo(rd2.s4);
+					} else {
+						return vb(rd1.day, rd2.day);
+					}	}
+			});
 			
 			
 			
