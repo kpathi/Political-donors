@@ -40,6 +40,13 @@ public class Donors {
 			BufferedReader br = new BufferedReader(rr);
 			String line;
 			PrintWriter pr = new PrintWriter(args[1], "UTF-8");
+			while ((line = br.readLine()) != null) {
+				String[] strs = line.split("\\|");
+				if (strs.length < 15 || (15 < strs.length && strs[15].length() != 0) || strs[14].length() == 0 || strs[0].length() == 0) {
+					continue;	}
+				String u1 = strs[0];
+				String trnsct = strs[14];
+				double tr = Double.parseDouble(trnsct);	
 			
 			
 	}
