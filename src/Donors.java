@@ -116,7 +116,21 @@ public class Donors {
 			return sg.compareTo(sg1);
 		}
 		return s1.substring(2, 4).compareTo(s2.substring(2, 4));
-	}		
+	}
+	public static String buildZipString(area1 rz, countad fs) {
+		StringBuilder bd1 = new StringBuilder();
+		bd1.append(rz.s6);
+		bd1.append("|");
+		bd1.append(rz.area);
+		bd1.append("|");
+		long q = Math.round(fs.median());
+		bd1.append(q);
+		bd1.append("|");
+		bd1.append(fs.occurance);
+		bd1.append("|");
+		bd1.append(Math.round(fs.total));
+		return bd1.toString();
+	}
 			
 			
 	}
