@@ -47,6 +47,21 @@ public class Donors {
 				String u1 = strs[0];
 				String trnsct = strs[14];
 				double tr = Double.parseDouble(trnsct);	
+				try {
+					String st = strs[10].substring(0, 5);
+					area1 a1 = new area1(u1, st);
+					countad y = null;
+					if (!h1.containsKey(a1)) {
+						y = new countad(1, tr);
+						y.add(tr);
+						h1.put(a1, y);
+					} else {
+						y = h1.get(a1);
+						y.occurance += 1;
+						y.total += tr;
+						y.add(tr);
+					}
+					
 			
 			
 	}
