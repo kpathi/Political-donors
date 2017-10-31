@@ -145,6 +145,98 @@ public class Donors {
 		bd2.append(Math.round(fs.total));
 		return bd2.toString();
 	}
+	public static int days(int year, int month) {
+		Calendar dr = new GregorianCalendar(year, month - 1, 1);
+		return dr.getActualMaximum(Calendar.DAY_OF_MONTH);
+	}
+}
+
+class day1 {
+	String s4;
+	String day;
+	public day1(String s4, String day) {
+		this.s4 = s4;
+		this.day = day;
+	}
+	@Override
+	public int hashCode() {
+		return (s4 + day).hashCode();
+	}
+	@Override
+	public boolean equals(Object r) {
+		return s4.equals(((day1)r).s4) && day.equals(((day1)r).day);
+	}
+}
+
+class area1 {
+	String s6, area;
+	public area1(String s6, String area) {
+		this.s6 = s6;
+		this.area = area;
+	}
+	@Override
+	public int hashCode() {
+		return (s6 + area).hashCode();
+	}
+	@Override
+	public boolean equals(Object r) {
+		return s6.equals(((area1)r).s6) && area.equals(((area1)r).area);
+	}
+}
+
+class countad {
+	double total;
+	int occurance;
+	PriorityQueue<Double> minHeap;
+	PriorityQueue<Double> maxHeap;
+	public countad(int occurance, double total) {
+		this.occurance = occurance;
+		this.total = total;
+		this.minHeap = new PriorityQueue<>();
+		this.maxHeap = new PriorityQueue<Double>(10, new Comparator<Double>(){
+			public int compare(Double a, Double b) {
+				return b.compareTo(a);
+			}
+		});
+	}
+	public double median() {
+		double fnl = 0;
+		if (minHeap.size() == maxHeap.size()) {
+			fnl = (minHeap.peek() + maxHeap.peek()) * 0.5;
+		} else if (minHeap.size() > maxHeap.size()) {
+			fnl = minHeap.peek();
+		} else {
+			fnl = maxHeap.peek();
+		}
+		return fnl;
+	}
+	public void add(double trsct1) {
+		if (minHeap.isEmpty()) {
+			minHeap.add(trsct1);
+			return;
+		}
+		if (minHeap.size() == maxHeap.size()) {
+			double min1 = minHeap.peek();
+			if (trsct1 >= min1) {
+				minHeap.add(trsct1);
+			} else {
+				maxHeap.add(trsct1);
+			}
+		} else if (minHeap.size() > maxHeap.size()) {
+			if (trsct1 <= minHeap.peek()) {
+				maxHeap.add(trsct1);
+			} else {
+				maxHeap.add(minHeap.poll());
+				minHeap.add(trsct1);
+			}
+		} else {
+			if (trsct1 >= maxHeap.peek()) {
+				minHeap.add(trsct1);
+			} else {
+				minHeap.add(maxHeap.poll());
+				maxHeap.add(trsct1);
+			}
+		}
 			
 			
 	}
